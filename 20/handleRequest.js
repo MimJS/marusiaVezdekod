@@ -46,7 +46,7 @@ module.exports = ({ request, session, version }) => {
   const user = db.games.find((v) => v.user_id == user_id);
   console.log(user);
   let text = null;
-  if ((!user && command != "старт") || !user.active) {
+  if ((!user && command != "старт") || !user?.active) {
     text = `Чтобы начать игру, скажите "Старт"`;
   }
   if (user && user?.active) {

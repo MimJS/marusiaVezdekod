@@ -3,9 +3,10 @@ const express = require("express");
 const handleRequest = require("./handleRequest");
 const fs = require("fs");
 const https = require("https");
+const path = require('path')
 const options = {
-  key: fs.readFileSync("/marusiaVezdekod/key.key"),
-  cert: fs.readFileSync("/marusiaVezdekod/crt.crt"),
+  key: fs.readFileSync(path.join(__dirname, "../key.key")),
+  cert: fs.readFileSync(path.join(__dirname, "../crt.crt")),
 };
 const app = express();
 app.use(express.json());
